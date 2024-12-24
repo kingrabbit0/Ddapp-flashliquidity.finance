@@ -1,0 +1,11 @@
+.word {
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-in {
+  transform: translateY(0);
+}
+
+.slide-out {
+  transform: translateY(-100%);
+}

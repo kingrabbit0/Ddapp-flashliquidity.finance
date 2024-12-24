@@ -1,0 +1,61 @@
+var map = {
+	"./SBPShares.png": 89770,
+	"./arbitrum.png": 17509,
+	"./arrow-down-blue.svg": 14220,
+	"./arrow-down-grey.svg": 70713,
+	"./arrow-right-white.png": 76997,
+	"./arrow-right.svg": 87095,
+	"./avalanche.png": 82976,
+	"./base.png": 97188,
+	"./blue-loader.svg": 22517,
+	"./circle-grey.svg": 29833,
+	"./circle.svg": 36839,
+	"./coinbaseWalletIcon.svg": 26919,
+	"./dropdown-blue.svg": 97013,
+	"./dropdown.svg": 94156,
+	"./dropup-blue.svg": 53116,
+	"./ethereum-logo.png": 45706,
+	"./flashlogo.png": 83212,
+	"./fliq.png": 43955,
+	"./fortmaticIcon.png": 1223,
+	"./link.svg": 15735,
+	"./logo_text_black.png": 61658,
+	"./logo_text_white.png": 8588,
+	"./magnifying-glass.svg": 83283,
+	"./matic.png": 46753,
+	"./menu.svg": 34618,
+	"./metamask.png": 73168,
+	"./plena-logo.png": 81493,
+	"./plus-blue.svg": 24352,
+	"./plus-grey.svg": 64389,
+	"./polygon-hermez-logo.png": 38487,
+	"./portisIcon.png": 55761,
+	"./question-mark.svg": 57463,
+	"./question.svg": 25275,
+	"./spinner.svg": 33126,
+	"./token-list/lists-dark.png": 71312,
+	"./token-list/lists-light.png": 37938,
+	"./trustWallet.png": 82282,
+	"./walletConnectIcon.svg": 25177,
+	"./x.svg": 61345
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = 73811;

@@ -1,0 +1,27 @@
+var _path;
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+import * as React from "react";
+function SvgDropdown(_ref, svgRef) {
+  let {
+    title,
+    titleId,
+    ...props
+  } = _ref;
+  return /*#__PURE__*/React.createElement("svg", _extends({
+    width: 12,
+    height: 7,
+    viewBox: "0 0 12 7",
+    fill: "none",
+    xmlns: "http://www.w3.org/2000/svg",
+    ref: svgRef,
+    "aria-labelledby": titleId
+  }, props), title ? /*#__PURE__*/React.createElement("title", {
+    id: titleId
+  }, title) : null, _path || (_path = /*#__PURE__*/React.createElement("path", {
+    d: "M0.97168 1L6.20532 6L11.439 1",
+    stroke: "#AEAEAE"
+  })));
+}
+const ForwardRef = /*#__PURE__*/React.forwardRef(SvgDropdown);
+export default __webpack_public_path__ + "static/media/dropdown.fef18eeb100831b750bb2101c7ed956f.svg";
+export { ForwardRef as ReactComponent };
