@@ -33686,21 +33686,21 @@ object-assign
                       className:
                         "flex justify-between text-base text-white mb-16 sm:flex-wrap sm:mb-0 md:flex-wrap md:mb-0 px-4",
                       children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
-                          (0, _footerLink.FooterLink),
-                          {
-                            href: "https://analytics.flashliquidity.finance/",
-                            children: "Analytics",
-                          },
-                          void 0,
-                          false,
-                          {
-                            fileName: "src/pages/home/v3/Footer/index.tsx",
-                            lineNumber: 22,
-                            columnNumber: 11,
-                          },
-                          undefined
-                        ),
+                        // /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
+                        //   (0, _footerLink.FooterLink),
+                        //   {
+                        //     href: "https://analytics.flashliquidity.finance/",
+                        //     children: "Analytics",
+                        //   },
+                        //   void 0,
+                        //   false,
+                        //   {
+                        //     fileName: "src/pages/home/v3/Footer/index.tsx",
+                        //     lineNumber: 22,
+                        //     columnNumber: 11,
+                        //   },
+                        //   undefined
+                        // ),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
                           (0, _footerLink.FooterLink),
                           {
@@ -33731,21 +33731,21 @@ object-assign
                           },
                           undefined
                         ),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
-                          (0, _footerLink.FooterLink),
-                          {
-                            href: "https://defillama.com/protocol/flashliquidity",
-                            children: "Defi Llama",
-                          },
-                          void 0,
-                          false,
-                          {
-                            fileName: "src/pages/home/v3/Footer/index.tsx",
-                            lineNumber: 25,
-                            columnNumber: 11,
-                          },
-                          undefined
-                        ),
+                        // /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
+                        //   (0, _footerLink.FooterLink),
+                        //   {
+                        //     href: "https://defillama.com/protocol/flashliquidity",
+                        //     children: "Defi Llama",
+                        //   },
+                        //   void 0,
+                        //   false,
+                        //   {
+                        //     fileName: "src/pages/home/v3/Footer/index.tsx",
+                        //     lineNumber: 25,
+                        //     columnNumber: 11,
+                        //   },
+                        //   undefined
+                        // ),
                       ],
                     },
                     void 0,
@@ -34793,6 +34793,7 @@ object-assign
                 viewBox: "0 0 44 37",
                 fill: "none",
                 xmlns: "http://www.w3.org/2000/svg",
+                style: {display: "none"},
                 children: [
                   /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
                     "g",
@@ -35100,6 +35101,7 @@ object-assign
                 height: "38",
                 viewBox: "0 0 41 38",
                 fill: "none",
+                style: {display: 'none'},
                 xmlns: "http://www.w3.org/2000/svg",
                 children: [
                   /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
@@ -35312,6 +35314,7 @@ object-assign
                 height: "38",
                 viewBox: "0 0 41 38",
                 fill: "none",
+                style: {display: 'none'},
                 xmlns: "http://www.w3.org/2000/svg",
                 children: [
                   /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
@@ -37548,7 +37551,8 @@ object-assign
                                             _jsxDevRuntime.jsxDEV)(
                                               GrowNumber,
                                               {
-                                                num: dexStats.TVL,
+                                                // num: dexStats.TVL,
+                                                num: 0,
                                               },
                                               void 0,
                                               false,
@@ -37650,7 +37654,8 @@ object-assign
                                             _jsxDevRuntime.jsxDEV)(
                                               GrowNumber,
                                               {
-                                                num: dexStats.TV,
+                                                // num: dexStats.TV,
+                                                num: 0,
                                               },
                                               void 0,
                                               false,
@@ -37749,7 +37754,8 @@ object-assign
                                           _jsxDevRuntime.jsxDEV)(
                                             GrowNumber,
                                             {
-                                              num: dexStats.pairs,
+                                              // num: dexStats.pairs,
+                                              num: 0,
                                             },
                                             void 0,
                                             false,
@@ -65779,7 +65785,7 @@ PERFORMANCE OF THIS SOFTWARE.
             _s();
             const [hoverLogo, setHoverLogo] = (0, _react.useState)(false);
             function go() {
-              window.open("https://twitter.com/flashliquidity");
+              window.open("https://x.com/");
             }
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
               (0, _icon.FooterIcon1Hover),
@@ -65807,7 +65813,7 @@ PERFORMANCE OF THIS SOFTWARE.
             _s1();
             const [hoverLogo, setHoverLogo] = (0, _react.useState)(false);
             function go() {
-              window.open("https://t.me/flashliquidity");
+              window.open("https://t.me/");
             }
             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(
               (0, _icon.FooterIcon2Hover),
