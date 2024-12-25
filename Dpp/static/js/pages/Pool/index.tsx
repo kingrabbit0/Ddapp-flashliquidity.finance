@@ -16,7 +16,7 @@ import { useActiveWeb3React } from '../../hooks'
 import { usePairs } from '../../data/Reserves'
 import {
   toV2LiquidityToken,
-  useTrackedTokenPairs
+  useTrackedTokenPairs,
 } from '../../state/user/hooks'
 import { Dots } from '../../components/swap/styleds'
 import { CardSection, DataCard } from '../../components/earn1/styled'
@@ -86,14 +86,14 @@ export default function Pool() {
   const trackedTokenPairs = useTrackedTokenPairs()
   const tokenPairsWithLiquidityTokens = useMemo(
     () =>
-      trackedTokenPairs.map(tokens => ({
+      trackedTokenPairs.map((tokens) => ({
         liquidityToken: toV2LiquidityToken(tokens),
-        tokens
+        tokens,
       })),
     [trackedTokenPairs]
   )
   const liquidityTokens = useMemo(
-    () => tokenPairsWithLiquidityTokens.map(tpwlt => tpwlt.liquidityToken),
+    () => tokenPairsWithLiquidityTokens.map((tpwlt) => tpwlt.liquidityToken),
     [tokenPairsWithLiquidityTokens]
   )
   const [v2PairsBalances, fetchingV2PairBalances] =
@@ -114,7 +114,7 @@ export default function Pool() {
   const v2IsLoading =
     fetchingV2PairBalances ||
     v2Pairs?.length < liquidityTokensWithBalances.length ||
-    v2Pairs?.some(V2Pair => !V2Pair)
+    v2Pairs?.some((V2Pair) => !V2Pair)
 
   const allV2PairsWithLiquidity = v2Pairs
     .map(([, pair]) => pair)
@@ -172,7 +172,7 @@ export default function Pool() {
                 <ExternalLink
                   style={{ color: 'blueviolet', textDecoration: 'underline' }}
                   target="_blank"
-                  href="https://docs.flashliquidity.finance/ecosystem/open-pools"
+                  href="https://docs.flashliquidityai.com/ecosystem/open-pools"
                 >
                   <TYPE.link fontSize={14}>
                     Read more about providing liquidity
@@ -231,7 +231,7 @@ export default function Pool() {
               </EmptyProposals>
             ) : allV2PairsWithLiquidity?.length > 0 ? (
               <>
-                {allV2PairsWithLiquidity.map(v2Pair => (
+                {allV2PairsWithLiquidity.map((v2Pair) => (
                   <FullPositionCard
                     key={v2Pair.liquidityToken.address}
                     pair={v2Pair}

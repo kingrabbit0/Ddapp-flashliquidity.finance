@@ -1,42 +1,59 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { ArbitrumIcon, AvalancheIcon, BannerArrowIcon, BaseIcon, DclIcon1, DclIcon19, DclIcon2, DclIcon3, DclIcon4, DclIcon5, PolygonIcon, ZkevmIcon } from '~src/components/layoutIcon/Icon';
-import "./index.scss";
+import React, { useEffect, useRef, useState } from 'react'
+import {
+  ArbitrumIcon,
+  AvalancheIcon,
+  BannerArrowIcon,
+  BaseIcon,
+  DclIcon1,
+  DclIcon19,
+  DclIcon2,
+  DclIcon3,
+  DclIcon4,
+  DclIcon5,
+  PolygonIcon,
+  ZkevmIcon,
+} from '~src/components/layoutIcon/Icon'
+import './index.scss'
 
 type FeatureCardProps = {
-  Icon: React.ElementType;
-  title: string;
-  description: string;
-  animationDelay?: string; // Add this line
-};
+  Icon: React.ElementType
+  title: string
+  description: string
+  animationDelay?: string // Add this line
+}
 
-const FeatureCard: React.FC<FeatureCardProps> = ({ Icon, title, description, animationDelay }) => {
-  const [isVisible, setIsVisible] = useState(false);
-  const cardRef = useRef<HTMLDivElement>(null);
+const FeatureCard: React.FC<FeatureCardProps> = ({
+  Icon,
+  title,
+  description,
+  animationDelay,
+}) => {
+  const [isVisible, setIsVisible] = useState(false)
+  const cardRef = useRef<HTMLDivElement>(null)
 
   const checkVisibility = () => {
     if (cardRef.current) {
-      const rect = cardRef.current.getBoundingClientRect();
+      const rect = cardRef.current.getBoundingClientRect()
       if (rect.top <= window.innerHeight && rect.bottom >= 0 && !isVisible) {
-        const delay = parseFloat(animationDelay || '0') * 1000; // Convert seconds to milliseconds
-        setTimeout(() => setIsVisible(true), delay);
+        const delay = parseFloat(animationDelay || '0') * 1000 // Convert seconds to milliseconds
+        setTimeout(() => setIsVisible(true), delay)
       }
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Initial check
+    window.addEventListener('scroll', checkVisibility)
+    checkVisibility() // Initial check
 
     return () => {
-      window.removeEventListener('scroll', checkVisibility);
-    };
-  }, []);
-
+      window.removeEventListener('scroll', checkVisibility)
+    }
+  }, [])
 
   let cardStyle: React.CSSProperties = {
     transform: 'translateX(-100%)',
     opacity: 0,
-  };
+  }
 
   if (isVisible) {
     cardStyle = {
@@ -44,7 +61,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ Icon, title, description, ani
       animation: `1s ease-out ${animationDelay} forwards slideInFromLeft`,
       opacity: 1,
       transform: 'translateX(0)',
-    };
+    }
   }
 
   const titleStyle = {
@@ -56,92 +73,108 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ Icon, title, description, ani
     display: 'block',
     margin: '0 auto',
     marginTop: '16px',
-    marginBottom: '8px'
-  };
-  const cardClassName = `flex-1 sm:w-full sm:mr-0 sm:mb-14 md:w-full lg:mb-6 bg-secondary-gradient rounded-3xl p-6 ${isVisible ? 'card-visible' : 'card-hidden'}` + (isVisible ? ` animate-${animationDelay}` : '');
+    marginBottom: '8px',
+  }
+  const cardClassName =
+    `flex-1 sm:w-full sm:mr-0 sm:mb-14 md:w-full lg:mb-6 bg-secondary-gradient rounded-3xl p-6 ${
+      isVisible ? 'card-visible' : 'card-hidden'
+    }` + (isVisible ? ` animate-${animationDelay}` : '')
 
   return (
-    <div ref={cardRef} className={cardClassName} style={{ border: '2px solid #1a1a3a' }} >
+    <div
+      ref={cardRef}
+      className={cardClassName}
+      style={{ border: '2px solid #1a1a3a' }}
+    >
       <div className="flex justify-center items-center sm:overflow-hidden md:scale-110 md:transform">
         <Icon />
       </div>
-      <h1 className="mt-16 mb-2.5 text-32 gotham_font_bold sm:mt-10 sm:text-center md:mt-10 text-center md:text-26" style={titleStyle}>
+      <h1
+        className="mt-16 mb-2.5 text-32 gotham_font_bold sm:mt-10 sm:text-center md:mt-10 text-center md:text-26"
+        style={titleStyle}
+      >
         {title}
       </h1>
       <p className="text-lg gotham_font_light text-center md:text-base sm:text-center">
         {description}
       </p>
     </div>
-  );
-};
+  )
+}
 
 type NetworkIconProps = {
-  Icon: React.ElementType; // This allows any React component
-  animationDelay: string;
-};
+  Icon: React.ElementType // This allows any React component
+  animationDelay: string
+}
 
 const NetworkIcon: React.FC<NetworkIconProps> = ({ Icon, animationDelay }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
   // Specify the type of element the ref will be attached to
-  const iconRef = useRef<HTMLDivElement>(null);
+  const iconRef = useRef<HTMLDivElement>(null)
 
   const checkVisibility = () => {
-    const element = iconRef.current;
+    const element = iconRef.current
     if (element) {
-      const rect = element.getBoundingClientRect();
+      const rect = element.getBoundingClientRect()
       if (rect.top <= window.innerHeight && rect.bottom >= 0 && !isVisible) {
-        setIsVisible(true);
+        setIsVisible(true)
       }
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Initial check
+    window.addEventListener('scroll', checkVisibility)
+    checkVisibility() // Initial check
 
     return () => {
-      window.removeEventListener('scroll', checkVisibility);
-    };
-  }, []);
+      window.removeEventListener('scroll', checkVisibility)
+    }
+  }, [])
 
   let iconStyle: React.CSSProperties = {
     transform: 'translateY(100%)',
     opacity: 0,
-  };
-  
+  }
+
   if (isVisible) {
     iconStyle = {
       ...iconStyle,
       animation: `slideUpFromBottom 1s ease-out ${animationDelay} forwards`,
-    };
+    }
   }
-  
+
   return (
     <div ref={iconRef} style={iconStyle}>
       <Icon />
     </div>
-  );
-};
+  )
+}
 
 const Dex = () => {
   function learnMore() {
-    window.open('https://app.flashliquidity.finance/#/swap');
+    window.open('https://app.flashliquidityai.com/#/swap')
   }
   function addLiquidity() {
-    window.open('https://app.flashliquidity.finance/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174');
+    window.open(
+      'https://app.flashliquidityai.com/#/add/0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619/0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174'
+    )
   }
   return (
     <div className="relative mt-24">
       <div className="relative z-10 mx-auto mt-64 sm:mt-24 md:mt-52 lg:w-4/5 sm:w-full md:w-full">
         <div className="relative z-10 mb-16 sm:justify-center md:justify-center sm:w-full md:w-full sm:text-center sm:mb-11 md:text-center md:mb-11">
           <div className="relative mb-4 sm:w-full md:w-full">
-            <p style={{
-              background: 'linear-gradient(to right, #ce1fde, #9231FD, #667eea)', // Adjust the gradient colors as needed
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'inline' // Ensures the gradient applies to the text only, not the entire line
-            }} className="absolute bottom-2 left-0 text-white gotham_font_bold  text-42 sm:text-4xl  md:text-4xl md:relative sm:relative">
+            <p
+              style={{
+                background:
+                  'linear-gradient(to right, #ce1fde, #9231FD, #667eea)', // Adjust the gradient colors as needed
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                display: 'inline', // Ensures the gradient applies to the text only, not the entire line
+              }}
+              className="absolute bottom-2 left-0 text-white gotham_font_bold  text-42 sm:text-4xl  md:text-4xl md:relative sm:relative"
+            >
               Decentralized exchange
             </p>
           </div>
@@ -169,15 +202,24 @@ const Dex = () => {
             description="No registration required, start trading immediately."
           />
         </div>
-        <div style={{ border: '2px solid #1a1a3a' }} className="relative bg-secondary-gradient pb-12 rounded-3xl mt-4 mb-20 sm:-mt-1 mx-auto lg:w-4/5 sm:w-full sm:px-5">
+        <div
+          style={{ border: '2px solid #1a1a3a' }}
+          className="relative bg-secondary-gradient pb-12 rounded-3xl mt-4 mb-20 sm:-mt-1 mx-auto lg:w-4/5 sm:w-full sm:px-5"
+        >
           <div className="text-center pt-6 mb-10">
-            <span style={{
-              background: 'linear-gradient(to right, #ce1fde, #9231FD, #667eea)', // Adjust the gradient colors as needed
-              WebkitBackgroundClip: 'text',
-              backgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              display: 'inline' // Ensures the gradient applies to the text only, not the entire line
-            }} className="text-white text-42 sm:text-2xl md:text-xl gotham_font_bold">Supported networks</span>
+            <span
+              style={{
+                background:
+                  'linear-gradient(to right, #ce1fde, #9231FD, #667eea)', // Adjust the gradient colors as needed
+                WebkitBackgroundClip: 'text',
+                backgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                display: 'inline', // Ensures the gradient applies to the text only, not the entire line
+              }}
+              className="text-white text-42 sm:text-2xl md:text-xl gotham_font_bold"
+            >
+              Supported networks
+            </span>
           </div>
           <div className="flex justify-around sm:mt-2">
             <NetworkIcon Icon={ArbitrumIcon} animationDelay="0s" />
@@ -213,7 +255,7 @@ const Dex = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Dex;
+export default Dex

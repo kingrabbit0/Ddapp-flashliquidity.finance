@@ -9,7 +9,7 @@ import {
   Droplet,
   TrendingUp,
   Layers,
-  BarChart2
+  BarChart2,
 } from 'react-feather'
 import styled from 'styled-components/macro'
 //import { useActiveWeb3React } from '../../hooks'
@@ -65,11 +65,8 @@ const MenuFlyout = styled.span`
   min-width: 14.125rem;
   background-color: ${({ theme }) => theme.bg1};
   border: 1px solid ${({ theme }) => theme.bg3};
-  box-shadow:
-    0px 0px 1px rgba(0, 0, 0, 0.01),
-    0px 4px 8px rgba(0, 0, 0, 0.04),
-    0px 16px 24px rgba(0, 0, 0, 0.04),
-    0px 24px 32px rgba(0, 0, 0, 0.01);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.01), 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 24px 32px rgba(0, 0, 0, 0.01);
   border-radius: 12px;
   padding: 0.5rem;
   display: flex;
@@ -153,15 +150,15 @@ export default function Menu() {
             <BarChart2 size={16} color="#8f46ff" />
             Analytics
           </MenuItem> */}
-          <MenuItem id="link" href="https://docs.flashliquidity.finance">
+          <MenuItem id="link" href="https://docs.flashliquidityai.com">
             <BookOpen size={16} color="#8f46ff" />
             Docs
           </MenuItem>
-          <MenuItem id="link" href="https://t.me/flashliquidity">
+          <MenuItem id="link" href="https://t.me/flashliquidityai">
             <Send size={16} color="#8f46ff" />
             Telegram
           </MenuItem>
-          <MenuItem id="link" href="https://twitter.com/flashliquidity">
+          <MenuItem id="link" href="https://twitter.com/flashliquidityai">
             <Twitter size={14} color="#8f46ff" />
             Twitter
           </MenuItem>

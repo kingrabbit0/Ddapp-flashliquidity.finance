@@ -7,7 +7,7 @@ import PoolCard from '../../components/earn1/PoolCard'
 import { RowBetween } from '../../components/Row'
 import {
   CardSection,
-  DataCard /*, CardNoise, CardBGImage */
+  DataCard /*, CardNoise, CardBGImage */,
 } from '../../components/earn1/styled'
 import Loader from '../../components/Loader'
 import { useActiveWeb3React } from '../../hooks'
@@ -68,7 +68,7 @@ export default function Earn() {
               {
                 <ExternalLink
                   style={{ color: 'blueviolet', textDecoration: 'underline' }}
-                  href="https://docs.flashliquidity.finance/ecosystem/self-balancing-pools"
+                  href="https://docs.flashliquidityai.com/ecosystem/self-balancing-pools"
                   target="_blank"
                 >
                   <TYPE.link fontSize={14}>
@@ -102,7 +102,7 @@ export default function Earn() {
           ) : !stakingRewardsExist ? (
             'No active farms'
           ) : (
-            stakingInfos?.map(stakingInfo => {
+            stakingInfos?.map((stakingInfo) => {
               // need to sort by added liquidity here
               return (
                 <PoolCard

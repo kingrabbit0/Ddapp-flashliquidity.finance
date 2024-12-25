@@ -23,7 +23,7 @@ export default Link;
 function FooterIconA() {
   const [hoverLogo, setHoverLogo] = useState(false);
   function go() {
-    window.open('https://twitter.com/flashliquidity');
+    window.open('https://x.com/flashliquidityai');
   }
   return (
     <FooterIcon1Hover
@@ -38,7 +38,7 @@ function FooterIconA() {
 function FooterIconB() {
   const [hoverLogo, setHoverLogo] = useState(false);
   function go() {
-    window.open('https://t.me/flashliquidity');
+    window.open('https://t.me/flashliquidityai');
   }
   return (
     <FooterIcon2Hover

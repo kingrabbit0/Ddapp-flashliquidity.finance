@@ -60,7 +60,7 @@ export default function Earn() {
               {
                 <ExternalLink
                   style={{ color: 'bluviolet', textDecoration: 'underline' }}
-                  href="https://docs.flashliquidity.finance/ecosystem/fliq-token/"
+                  href="https://docs.flashliquidityai.com/ecosystem/fliq-token/"
                   target="_blank"
                 >
                   <TYPE.link fontSize={14}>Read more about FLIQ</TYPE.link>
@@ -84,7 +84,7 @@ export default function Earn() {
           ) : !stakingRewardsExist ? (
             'No active rewards'
           ) : (
-            stakingInfos?.map(stakingInfo => {
+            stakingInfos?.map((stakingInfo) => {
               // need to sort by added liquidity here
               return (
                 <PoolCard

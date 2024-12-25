@@ -3,7 +3,7 @@ import { AutoColumn } from '../../components/Column'
 import styled from 'styled-components/macro'
 import {
   STAKING_REWARDS_INFO,
-  useStakingInfo
+  useStakingInfo,
 } from '../../state/stakefliq/hooks'
 import { TYPE, ExternalLink } from '../../theme'
 import PoolCard from '../../components/stake/PoolCard'
@@ -64,7 +64,7 @@ export default function Earn() {
               {
                 <ExternalLink
                   style={{ color: 'bluviolet', textDecoration: 'underline' }}
-                  href="https://docs.flashliquidity.finance/ecosystem/fliq-token/"
+                  href="https://docs.flashliquidityai.com/ecosystem/fliq-token/"
                   target="_blank"
                 >
                   <TYPE.link fontSize={14}>Read more about FLIQ</TYPE.link>
@@ -82,7 +82,7 @@ export default function Earn() {
           ) : !stakingRewardsExist ? (
             'Staking contract not deployed yet'
           ) : (
-            stakingInfos?.map(stakingInfo => {
+            stakingInfos?.map((stakingInfo) => {
               // need to sort by added liquidity here
               return (
                 <PoolCard

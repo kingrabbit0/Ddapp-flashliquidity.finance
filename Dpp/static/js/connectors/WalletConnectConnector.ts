@@ -1,6 +1,6 @@
 import {
   EthereumProvider,
-  EthereumProviderOptions
+  EthereumProviderOptions,
 } from '@walletconnect/ethereum-provider/dist/types/EthereumProvider'
 import { AbstractConnector } from '@web3-react/abstract-connector'
 import { ConnectorUpdate } from '@web3-react/types'
@@ -27,7 +27,7 @@ export class WalletConnectConnector extends AbstractConnector {
       chains: [defaultChainId],
       optionalChains: [
         137, 80001, 1101, 1442, 43114, 43113, 42161, 421614, 11155111, 84532,
-        8453
+        8453,
       ], // Assert type here
       rpcMap: {
         137: 'https://polygon-rpc.com/',
@@ -40,7 +40,7 @@ export class WalletConnectConnector extends AbstractConnector {
         421614: 'https://sepolia-rollup.arbitrum.io/rpc',
         11155111: 'https://rpc.sepolia.org',
         84532: 'https://sepolia.base.org',
-        8453: 'https://base.llamarpc.com'
+        8453: 'https://base.llamarpc.com',
       },
       projectId: 'b2642f3879d12e45ad5f56697e4efc70',
       showQrModal: true,
@@ -67,9 +67,9 @@ export class WalletConnectConnector extends AbstractConnector {
       metadata: {
         name: 'FlashLiquidity',
         description: 'FlashLiquidity Interface',
-        url: 'https://app.flashliquidity.finance', // origin must match your domain & subdomain
-        icons: ['	https://avatars.githubusercontent.com/u/91729903']
-      }
+        url: 'https://app.flashliquidityai.com', // origin must match your domain & subdomain
+        icons: ['	https://avatars.githubusercontent.com/u/91729903'],
+      },
     }
 
     this.handleChainChanged = this.handleChainChanged.bind(this)
@@ -99,7 +99,7 @@ export class WalletConnectConnector extends AbstractConnector {
         '@walletconnect/ethereum-provider'
       )
         .then()
-        .then(m => m?.default ?? m)
+        .then((m) => m?.default ?? m)
       this.walletConnectProvider = await walletConnectProviderFactory.init(
         this.config
       )
